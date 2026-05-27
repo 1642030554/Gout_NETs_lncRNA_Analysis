@@ -1072,7 +1072,7 @@ p1 <- ggplot(diff_df_clean, aes(x = logFC, y = -log10(adj.P.Val), color = group)
     color = ""
   ) +
   xlim(c(-6, 6)) +
-  theme_bw() + # 替换为PLOS ONE要求的黑白主题（比theme_sci更规范）
+  theme_bw() + # 替换要求的黑白主题（比theme_sci更规范）
   theme(
     text = element_text(family = "Arial", size = 10), # 强制Arial字体
     axis.title = element_text(size = 12, face = "bold"),
@@ -1085,7 +1085,7 @@ p1 <- ggplot(diff_df_clean, aes(x = logFC, y = -log10(adj.P.Val), color = group)
   )
 
 # ==============================================
-# 第三步：保存为PLOS ONE标准PNG图片（核心）
+# 第三步：保存准PNG图片（核心）
 # ==============================================
 ggsave(
   filename = "Fig1.png",
@@ -1101,7 +1101,7 @@ ggsave(
 )
 
 # 生成完成提示
-cat("✅ PLOS ONE标准PNG火山图已生成：Fig1.png\n")
+cat("✅ P准PNG火山图已生成：Fig1.png\n")
 cat("📐 尺寸：1800×1500像素 (300dpi)\n")
 cat("📁 文件大小：约1-2MB\n")
 
@@ -1217,7 +1217,7 @@ volcano_plot <- ggplot(diff_df_clean, aes(x = logFC, y = -log10(adj.P.Val), colo
   )
 
 # ==============================================
-# 第六步：保存为PLOS ONE标准PNG
+# 第六步：保存准PNG
 # ==============================================
 ggsave(
   filename = "Fig1_final_corrected.png",
@@ -1418,7 +1418,7 @@ cat("\n🎉 最终版Fig2绘制完成！\n")
 cat("✅ 使用了适合小样本的Wilcoxon秩和检验\n")
 cat("✅ 手动添加了100%准确的显著性标记\n")
 cat("✅ 所有标记与正文结论完全一致\n")
-cat("✅ 生成的图片可直接用于PLOS ONE投稿\n")
+cat("✅ 生成的图片可直接用稿\n")
 
 
 
@@ -1531,7 +1531,7 @@ for (gene in nets_core_genes) {
 cat("\n✅ 最终版Fig2绘制完成！\n")
 cat("✅ 所有显著性标记基于真实的Wilcoxon检验结果\n")
 cat("✅ 图注已修正，如实描述了数据的异质性\n")
-cat("✅ 完全符合PLOS ONE的学术规范，可以直接投稿\n")
+cat("✅ 完全符术规范，可以直接投稿\n")
 
 
 
@@ -1911,7 +1911,7 @@ ggsave(
 cat("\n🎉 Fig4绘制完成！\n")
 cat("✅ 已删除假阳性的astrocyte development term\n")
 cat("✅ 只保留了前9个免疫炎症相关的核心term\n")
-cat("✅ 生成的图片完全符合PLOS ONE投稿标准\n")
+cat("✅ 生成的图片完全符稿标准\n")
 
 
 
@@ -1960,7 +1960,7 @@ kegg_enrich_filtered <- kegg_enrich_filtered %>%
   mutate(GeneRatio = gene_count / total_count)
 
 # ==============================================
-# 第四步：绘制符合PLOS ONE标准的气泡图
+# 第四步：绘制符标准的气泡图
 # ==============================================
 p5 <- ggplot(kegg_enrich_filtered, aes(x = GeneRatio, y = reorder(Description, GeneRatio))) +
   geom_point(aes(size = Count, color = p.adjust), alpha = 0.7) +
@@ -2009,7 +2009,7 @@ ggsave(
 cat("\n🎉 Fig5绘制完成！\n")
 cat("✅ 只保留了3个核心免疫炎症相关通路\n")
 cat("✅ 没有任何警告信息\n")
-cat("✅ 生成的图片完全符合PLOS ONE投稿标准\n")
+cat("✅ 生成的图片完全符合P稿标准\n")
 
 
 
@@ -2576,7 +2576,7 @@ export_sci_plot(p3a, "Fig3A_UMAP细胞分群图", width = 8, height = 7)
 cat("\n🎉 Fig3A UMAP图绘制完成！\n")
 cat("✅ 已自动保存为PDF和PNG格式\n")
 cat("✅ 风格和其他图完全统一\n")
-cat("✅ 可直接用于PLOS ONE投稿\n")
+cat("✅ 可直接用于P稿\n")
 
 # ==============================================
 # 图3B：基因表达气泡图
@@ -3138,4 +3138,4 @@ cat("\n🎉 Fig7联合模型ROC曲线绘制完成！\n")
 cat("✅ 使用DeLong法计算95%置信区间，解决小样本bootstrap问题\n")
 cat("✅ 如实标注了表观AUC和统计结果\n")
 cat("✅ 风格和其他图完全统一\n")
-cat("✅ 可直接用于PLOS ONE投稿\n")
+cat("✅ 可直接用于P"
